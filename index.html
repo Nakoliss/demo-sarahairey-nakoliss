@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>42 Hook Templates — Free Download | Sarah Airey Co.</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: #FAF3E7;
+    color: #1a1a1a;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+  header { background: #FAF3E7; padding: 28px 0 8px; text-align: center; }
+  .brand { font-size: 15px; letter-spacing: 4px; font-weight: 700; text-transform: uppercase; color: #1a1a1a; }
+  .brand span { color: #E8735A; }
+  .hero { text-align: center; padding: 36px 0 48px; }
+  .eyebrow {
+    display: inline-block; background: #7BA0C0; color: #fff;
+    font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+    padding: 7px 16px; border-radius: 999px; margin-bottom: 22px;
+  }
+  h1 {
+    font-size: 52px; line-height: 1.08; font-weight: 900; letter-spacing: -1px;
+    color: #E8735A; margin-bottom: 18px;
+  }
+  h1 .blue { color: #5E8CAD; }
+  .hero p.lede { font-size: 21px; max-width: 640px; margin: 0 auto 10px; }
+  .hero p.sub { font-size: 17px; max-width: 620px; margin: 0 auto 30px; color: #444; }
+  .capture {
+    background: #fff; border: 2px solid #E8735A; border-radius: 16px;
+    max-width: 560px; margin: 0 auto; padding: 32px 32px 26px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+  }
+  .capture h2 { font-size: 24px; font-weight: 900; color: #1a1a1a; margin-bottom: 6px; }
+  .capture p { font-size: 15px; color: #444; margin-bottom: 20px; }
+  .capture label { display: block; text-align: left; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin: 14px 0 6px; }
+  .capture input {
+    width: 100%; padding: 14px 16px; font-size: 16px;
+    border: 2px solid #ddd; border-radius: 10px; background: #FDF9F1; color: #1a1a1a;
+  }
+  .capture input:focus { outline: none; border-color: #7BA0C0; }
+  .capture button {
+    width: 100%; margin-top: 22px; padding: 17px; font-size: 19px; font-weight: 900;
+    letter-spacing: .5px; color: #fff; background: #E8735A; border: none;
+    border-radius: 10px; cursor: pointer; text-transform: uppercase;
+  }
+  .capture button:hover { background: #D9634B; }
+  .mock-note {
+    margin-top: 14px; font-size: 13px; color: #7BA0C0; font-weight: 700; text-align: center;
+  }
+  .band { background: #7BA0C0; color: #fff; padding: 52px 0; margin-top: 56px; }
+  .band h2 { font-size: 34px; font-weight: 900; text-align: center; margin-bottom: 26px; }
+  .band ul { list-style: none; max-width: 620px; margin: 0 auto; font-size: 18px; }
+  .band li { padding: 10px 0 10px 34px; position: relative; }
+  .band li::before { content: "✓"; position: absolute; left: 0; font-weight: 900; }
+  .proof { padding: 56px 0 20px; }
+  .proof h2 { font-size: 34px; font-weight: 900; color: #E8735A; text-align: center; margin-bottom: 30px; }
+  .cards { display: grid; grid-template-columns: 1fr; gap: 22px; }
+  .card {
+    background: #fff; border-radius: 14px; padding: 28px 30px;
+    box-shadow: 0 6px 20px rgba(0,0,0,.06); border-left: 6px solid #E8735A;
+  }
+  .card blockquote { font-size: 18px; font-style: italic; margin-bottom: 12px; }
+  .card .who { font-weight: 900; font-size: 15px; letter-spacing: .5px; }
+  .card .who span { color: #5E8CAD; }
+  .stat { font-size: 30px; font-weight: 900; color: #E8735A; line-height: 1.1; margin-bottom: 6px; }
+  .courses { padding: 48px 0 56px; }
+  .courses h2 { font-size: 34px; font-weight: 900; color: #5E8CAD; text-align: center; margin-bottom: 8px; }
+  .courses p.intro { text-align: center; font-size: 17px; color: #444; margin-bottom: 30px; }
+  .course-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .course {
+    background: #fff; border-radius: 14px; padding: 26px 22px; text-align: center;
+    box-shadow: 0 6px 20px rgba(0,0,0,.06);
+  }
+  .course h3 { font-size: 20px; font-weight: 900; color: #E8735A; margin-bottom: 8px; }
+  .course p { font-size: 15px; color: #444; margin-bottom: 14px; }
+  .course .price { font-size: 22px; font-weight: 900; color: #1a1a1a; }
+  .course .price small { display: block; font-size: 14px; font-weight: 400; color: #666; margin-top: 2px; }
+  footer { background: #1a1a1a; color: #ccc; text-align: center; padding: 34px 24px; font-size: 14px; }
+  footer p { margin-bottom: 6px; }
+  footer .disclaimer { color: #999; font-size: 13px; }
+  @media (max-width: 640px) {
+    h1 { font-size: 36px; }
+    .course-grid { grid-template-columns: 1fr; }
+    .capture { padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">Sarah Airey <span>Co.</span></div>
+  </div>
+</header>
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Free Download</span>
+    <h1>42 HOOK TEMPLATES<br><span class="blue">FOR YOUR PRODUCT BASED BUSINESS</span></h1>
+    <p class="lede"><strong>STOP THE SCROLL!</strong></p>
+    <p class="sub">Use these Hooks in your Reels, Captions &amp; Instagram Stories to stop the scroll &amp; entice people to keep reading. No fluff — just hooks that work for product-based businesses.</p>
+    <form class="capture" action="#" method="post" onsubmit="return false;">
+      <h2>Get the 42 Hook Templates — FREE</h2>
+      <p>Pop your details below and I'll send them straight to your inbox.</p>
+      <label for="fname">First name</label>
+      <input type="text" id="fname" name="first_name" placeholder="Your first name" required>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Your email address" required>
+      <button type="submit">Send me the FREE Hooks!</button>
+      <p class="mock-note">Maquette conceptuelle — formulaire non fonctionnel</p>
+    </form>
+  </div>
+</section>
+<section class="band">
+  <div class="wrap">
+    <h2>WHAT YOU GET</h2>
+    <ul>
+      <li>42 hook ideas ready to drop into your Reels</li>
+      <li>Hooks that work in Captions too — not just video</li>
+      <li>Hooks for your Instagram Stories, so people actually keep watching</li>
+      <li>Written for product-based businesses — you're not a coach or a service provider, so stop posting like one</li>
+    </ul>
+  </div>
+</section>
+<section class="proof">
+  <div class="wrap">
+    <h2>REAL RESULTS FROM REAL MAKERS</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="stat">137 sales in May — 10 sales in one day</div>
+        <blockquote>"When I first got in touch with Sarah, I was desperate to get things improving with Motlied as I wanted to scale the business, to work less and spend more time with my family. It's been a goal to get 40 sales a month as previously I was very lucky to get 25. Then, over May I got 137 sales. I even got 10 sales in one day… I'm so thankful for all your help and advice."</blockquote>
+        <p class="who">JENNA <span>— MOTLIED KIDS</span></p>
+      </div>
+      <div class="card">
+        <div class="stat">$1,755 from ONE Reel</div>
+        <blockquote>Annette used one Reels prompt, then sold $1,755 of product from that one Reel — which fully sold her out.</blockquote>
+        <p class="who">ANNETTE <span>— REELS CLUB MEMBER</span></p>
+      </div>
+      <div class="card">
+        <div class="stat">$13k over a weekend</div>
+        <blockquote>Tahni used the Reels prompts and did $13k over a weekend selling bamboo pyjamas.</blockquote>
+        <p class="who">TAHNI <span>— REELS CLUB MEMBER</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="courses">
+  <div class="wrap">
+    <h2>READY TO GO DEEPER?</h2>
+    <p class="intro">Once you've got the hooks, here's where makers go next.</p>
+    <div class="course-grid">
+      <div class="course">
+        <h3>YOBI — Your On Brand Instagram</h3>
+        <p>Build your brand on Instagram, the right way.</p>
+        <p class="price">$69 USD<small>3 monthly payments</small></p>
+        <p class="price" style="margin-top:10px;">$197 USD<small>one-time payment in full</small></p>
+      </div>
+      <div class="course">
+        <h3>Caption School</h3>
+        <p>Captions that sell, without sounding salesy.</p>
+        <p class="price">$147 USD<small>one-time payment in full</small></p>
+        <p class="price" style="margin-top:10px;">$54 USD<small>3 monthly payments</small></p>
+      </div>
+      <div class="course">
+        <h3>Master Your Reels</h3>
+        <p>Reels that stop the scroll and bring in sales.</p>
+        <p class="price">$297 USD<small>one-time payment in full</small></p>
+        <p class="price" style="margin-top:10px;">$89 USD<small>4 monthly payments</small></p>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <p><strong>Sarah Airey Co.</strong> — Instagram &amp; Reels for product-based businesses</p>
+  <p class="disclaimer">Démo non affiliée — page conceptuelle créée à des fins de démonstration</p>
+</footer>
+</body>
+</html>
